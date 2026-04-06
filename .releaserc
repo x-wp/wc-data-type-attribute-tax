@@ -1,0 +1,31 @@
+{
+  "branches": [
+    "master",
+    {
+      "name": "beta",
+      "prerelease": true
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "zip -r '/tmp/release.zip' src composer.json README.md LICENSE"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "/tmp/release.zip",
+            "name": "xwoo-data-attribute-tax-${nextRelease.version}.zip",
+            "label": "xWoo Data Attribute Tax v${nextRelease.version}"
+          }
+        ]
+      }
+    ]
+  ]
+}

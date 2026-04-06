@@ -1,0 +1,49 @@
+{
+  "name": "x-wp/wc-data-attribute-tax",
+  "require": {
+    "x-wp/wc-data-type": "^1.4"
+  },
+  "autoload": {
+    "classmap": [
+      "src/Core/"
+    ],
+    "files": [
+      "src/Utils/xwc-utils-att-tax.php"
+    ]
+  },
+  "minimum-stability": "beta",
+  "prefer-stable": true,
+  "require-dev": {
+    "x-wp/di": "^1.0",
+    "oblak/wordpress-coding-standard": "^1",
+    "php-stubs/woocommerce-stubs": "^9.0",
+    "php-stubs/wordpress-stubs": "^6.5",
+    "phpstan/extension-installer": "^1.3",
+    "phpstan/phpstan": "^1.10",
+    "phpstan/phpstan-deprecation-rules": "^1.1",
+    "swissspidy/phpstan-no-private": "^0.2.0",
+    "szepeviktor/phpstan-wordpress": "^1.3",
+    "symfony/var-dumper": "^6.4",
+    "phpunit/phpunit": "^9.6",
+    "yoast/phpunit-polyfills": "^4.0"
+  },
+  "scripts": {
+    "test:env:start": "docker compose up -d mysql",
+    "test:env:stop": "docker compose down --remove-orphans",
+    "test:install": [
+      "@test:env:start",
+      "bash bin/install-wp-tests.sh"
+    ],
+    "test": "vendor/bin/phpunit",
+    "test:clean": [
+      "@test:env:stop",
+      "bash bin/clean-wp-tests.sh"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    }
+  }
+}
