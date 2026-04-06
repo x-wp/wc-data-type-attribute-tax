@@ -8,6 +8,7 @@
 ![Static Badge](https://img.shields.io/badge/WP-%3E%3D6.5-3858e9?style=flat-square&logo=wordpress&logoSize=auto)
 ![Static Badge](https://img.shields.io/badge/WC-%3E%3D9.0-7f54b3?style=flat-square&logo=woocommerce&logoSize=auto)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/x-wp/wc-data-attribute-tax/tests.yml?label=Tests&event=push&style=flat-square&logo=githubactions&logoColor=white&logoSize=auto)](https://github.com/x-wp/wc-data-attribute-tax/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/x-wp/wc-data-type-attribute-tax/graph/badge.svg?token=YS1OMUOQWW)](https://codecov.io/gh/x-wp/wc-data-type-attribute-tax)
 
 </div>
 
